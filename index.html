@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sadiq Solutions — CV Screening for Recruitment Teams</title>
+<meta name="description" content="Send an applicant pool, get back a ranked shortlist with a stated reason for every candidate. Gulf-aware screening for recruitment agencies. First 20 CVs free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14243d; --navy-soft:#1f3456; --ink:#1a2333; --body:#4a5568;
+    --accent:#1f9d76; --accent-soft:#e8f5f0; --line:#e2e8f0;
+    --bg:#ffffff; --bg-alt:#f7f9fb; --red:#c0392b; --amber:#b7791f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--body); background:var(--bg); line-height:1.65;
+    -webkit-font-smoothing:antialiased; font-size:17px;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--ink);line-height:1.25;font-weight:700;letter-spacing:-.02em}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* header */
+  header{background:var(--navy);color:#fff;padding:18px 0}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-weight:700;color:#fff;font-size:17px;letter-spacing:-.01em}
+  .brand span{color:#8fc9b6;font-weight:500}
+  header .contact{font-size:14.5px;color:#c3cfe0}
+  header .contact a{color:#fff;border-bottom:1px solid rgba(255,255,255,.35)}
+  header .contact a:hover{text-decoration:none;border-color:#fff}
+
+  /* hero */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px}
+  .hero h1{color:#fff;font-size:clamp(30px,5vw,44px);margin-bottom:18px}
+  .hero p.lede{font-size:clamp(17px,2.2vw,19.5px);color:#cbd7e6;max-width:640px}
+  .hero .offer{
+    margin-top:30px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-left:3px solid var(--accent);border-radius:6px;padding:20px 22px;max-width:640px;
+  }
+  .hero .offer strong{color:#fff;display:block;font-size:18px;margin-bottom:5px}
+  .hero .offer span{color:#b9c7da;font-size:15.5px}
+  .cta{
+    display:inline-block;margin-top:24px;background:var(--accent);color:#fff;
+    font-weight:600;padding:13px 26px;border-radius:5px;font-size:16px;
+  }
+  .cta:hover{background:#1a8765;text-decoration:none}
+  .cta-note{display:block;margin-top:11px;font-size:14px;color:#9fb0c6}
+
+  /* sections */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--bg-alt)}
+  h2{font-size:clamp(23px,3.4vw,29px);margin-bottom:10px}
+  .sub{margin-bottom:30px;font-size:16.5px}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;margin-top:28px}
+  .step .n{
+    display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;
+    border-radius:50%;background:var(--accent-soft);color:var(--accent);
+    font-weight:700;font-size:14px;margin-bottom:11px;
+  }
+  .step h3{font-size:17px;margin-bottom:6px}
+  .step p{font-size:15.5px}
+
+  /* sample */
+  .sample{
+    background:#fff;border:1px solid var(--line);border-radius:7px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,36,61,.06);margin-top:6px;
+  }
+  .sample .bar{background:var(--navy);color:#fff;padding:13px 20px;font-size:14px;font-weight:600;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .sample .bar em{font-style:normal;color:#9fb6cf;font-weight:400}
+  .sample .body{padding:20px}
+  .cand{padding:15px 0;border-bottom:1px solid var(--line)}
+  .cand:last-child{border-bottom:0;padding-bottom:0}
+  .cand .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .cand .nm{font-weight:600;color:var(--ink);font-size:16px}
+  .cand .sc{font-weight:700;color:var(--accent);font-size:16px;white-space:nowrap}
+  .cand .why{font-size:15px;margin-top:5px}
+  .cand .flag{font-size:14.5px;color:var(--amber);margin-top:5px}
+  .cut{margin-top:18px;padding-top:16px;border-top:2px solid var(--line)}
+  .cut .lbl{font-size:12.5px;font-weight:700;color:var(--red);letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}
+  .cut p{font-size:14.5px;margin-bottom:6px}
+  .cut strong{color:var(--ink);font-weight:600}
+  .caption{font-size:14px;margin-top:12px;color:#718096}
+
+  /* list */
+  ul.checks{list-style:none;margin-top:8px}
+  ul.checks li{padding-left:27px;position:relative;margin-bottom:13px;font-size:16px}
+  ul.checks li::before{
+    content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+    border-radius:50%;background:var(--accent);
+  }
+  ul.checks strong{color:var(--ink);font-weight:600}
+
+  /* pricing */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:18px;margin-top:28px}
+  .tier{background:#fff;border:1px solid var(--line);border-radius:7px;padding:24px 22px;position:relative}
+  .tier.best{border-color:var(--accent);border-width:2px;box-shadow:0 3px 14px rgba(31,157,118,.1)}
+  .tier .tag{
+    position:absolute;top:-10px;left:22px;background:var(--accent);color:#fff;
+    font-size:11px;font-weight:700;letter-spacing:.07em;padding:3px 9px;border-radius:3px;
+  }
+  .tier h3{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--body);font-weight:600}
+  .tier .price{font-size:33px;font-weight:700;color:var(--ink);margin:7px 0 3px;letter-spacing:-.02em}
+  .tier .per{font-size:14px;color:#718096;margin-bottom:14px}
+  .tier ul{list-style:none;font-size:15px}
+  .tier li{margin-bottom:7px;padding-left:16px;position:relative}
+  .tier li::before{content:"–";position:absolute;left:0;color:var(--accent)}
+
+  /* close */
+  .close{background:var(--navy);color:#fff;text-align:center;padding:60px 0}
+  .close h2{color:#fff;margin-bottom:12px}
+  .close p{color:#cbd7e6;max-width:520px;margin:0 auto 26px;font-size:17px}
+  .close .row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+  .btn2{
+    display:inline-block;border:1px solid rgba(255,255,255,.4);color:#fff;
+    padding:13px 26px;border-radius:5px;font-weight:600;font-size:16px;
+  }
+  .btn2:hover{background:rgba(255,255,255,.1);text-decoration:none}
+
+  footer{background:#0e1b2e;color:#7e8fa6;padding:26px 0;font-size:14.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  footer a{color:#a8bcd4}
+
+  @media(max-width:600px){
+    body{font-size:16px}
+    section{padding:44px 0}
+    .hero{padding:44px 0 50px}
+    header .wrap{flex-direction:column;align-items:flex-start;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Sadiq Solutions <span>— CV Screening</span></div>
+    <div class="contact">
+      <a href="mailto:sadiqssolutions@gmail.com">sadiqssolutions@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://wa.me/2347045133797">WhatsApp +234 704 513 3797</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Your shortlist, back in hours — with a reason for every candidate.</h1>
+    <p class="lede">
+      A high-volume role pulls 200 to 400 applicants. Reading them properly takes days,
+      and by the time you finish, your strongest candidates have accepted somewhere else.
+      Send me the pool. I send back a ranked shortlist you can defend to a client.
+    </p>
+    <div class="offer">
+      <strong>Try it on a live role, free.</strong>
+      <span>Send 20 CVs from a role you're working now. Ranked shortlist back within 6 hours.
+      No contract, no card. If the ranking doesn't match your own read, you've lost nothing.</span>
+    </div>
+    <a class="cta" href="https://wa.me/2347045133797?text=Hi%20Sadiq%20-%20I'd%20like%20to%20try%20the%20free%2020%20CV%20screen.">Start with 20 CVs free</a>
+    <span class="cta-note">Or email <a href="mailto:sadiqssolutions@gmail.com" style="color:#cbd7e6;border-bottom:1px solid rgba(255,255,255,.3)">sadiqssolutions@gmail.com</a></span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three steps. Most roles come back the same day.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>You set the rules</h3>
+        <p>Minimum experience, required licences and certifications, visa or iqama status,
+           languages, salary ceiling — whatever means "no" for this role.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Every CV gets read</h3>
+        <p>Free text, PDF, inconsistent formatting, any layout. Knockouts apply first,
+           then each surviving candidate is scored against your actual job description —
+           not keyword-matched.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>You get a defensible shortlist</h3>
+        <p>Ranked candidates with a plain-English reason each, a full CSV of everyone
+           screened with their reject reason, and borderline cases flagged for your review.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>What you actually receive</h2>
+    <p class="sub">A real excerpt — Staff Nurse ICU, Riyadh. 200 applicants screened.</p>
+
+    <div class="sample">
+      <div class="bar">
+        <span>Shortlist — Staff Nurse ICU (Riyadh, KSA)</span>
+        <em>200 screened → 46 passed knockouts → top 5</em>
+      </div>
+      <div class="body">
+        <div class="cand">
+          <div class="top">
+            <span class="nm">1. Jocelyn M. Dizon — Staff Nurse, Adult ICU</span>
+            <span class="sc">96.7/100</span>
+          </div>
+          <p class="why">3/3 must-haves evidenced · 9.3 years in-sector vs 3-year minimum ·
+             30-day notice, transferable iqama — deployable fast</p>
+        </div>
+        <div class="cand">
+          <div class="top">
+            <span class="nm">2. Noura Al-Harbi — Staff Nurse, Adult ICU</span>
+            <span class="sc">95.0/100</span>
+          </div>
+          <p class="why">3/3 must-haves evidenced · 4 years in-sector · SCFHS and DataFlow complete</p>
+          <p class="flag">Quota note: Saudi national — counts toward Nitaqat.</p>
+        </div>
+        <div class="cand">
+          <div class="top">
+            <span class="nm">3. Omar Farouk — ICU Nurse</span>
+            <span class="sc">67.0/100</span>
+          </div>
+          <p class="why">10 years in-sector, but only 1/3 must-haves evidenced
+             (missing: patient assessment, ventilator management)</p>
+          <p class="flag">Watch-outs: visa status not stated — verify before shortlisting ·
+             three consecutive ~1-year roles (2021–24)</p>
+        </div>
+
+        <div class="cut">
+          <div class="lbl">And who was cut, with the reason</div>
+          <p><strong>Samuel Adeyemi</strong> — requires sponsorship; role is local-hire only.</p>
+          <p><strong>Meera Krishnan</strong> — DataFlow verification not completed.
+             <em>Flagged: knocked on a single rule — check if waivable.</em></p>
+          <p><strong>Tomas Lindqvist</strong> — licence listed as "in progress", which is not held.</p>
+        </div>
+      </div>
+    </div>
+    <p class="caption">Every rejection carries a stated reason you can show a client. Nothing is quietly binned.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Why it holds up</h2>
+    <ul class="checks">
+      <li><strong>Gulf-aware where it matters.</strong> SCFHS, DHA/DOH, QCHP, DataFlow verification,
+          iqama transferability, Nitaqat and Emiratisation quota fit. No off-the-shelf tool encodes these.</li>
+      <li><strong>It catches what a fast read misses.</strong> Expired certifications, licences
+          listed as "in progress" being counted as held, and job-hopping patterns across dates.</li>
+      <li><strong>Nothing is silently dropped.</strong> A strong candidate knocked out on one rule
+          is flagged as possibly waivable, not deleted.</li>
+      <li><strong>No protected characteristics.</strong> Nationality, age, gender and marital status
+          are never extracted or scored — only experience, skills, certifications and availability.
+          (Nationality is used solely where a client's quota requirement makes it a stated hiring criterion.)</li>
+      <li><strong>A human reviews every shortlist</strong> before it reaches you. You are not
+          receiving raw model output.</li>
+      <li><strong>Your data doesn't linger.</strong> CVs are processed to produce your shortlist and
+          deleted after delivery. Redacted CVs work fine — the scoring doesn't need names.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="sub">Per role, or a flat month if you're screening continuously.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Starter</h3>
+        <div class="price">$297</div>
+        <div class="per">one role · 48 hours</div>
+        <ul>
+          <li>Up to 100 CVs</li>
+          <li>Ranked shortlist</li>
+          <li>Reject-reason CSV</li>
+        </ul>
+      </div>
+      <div class="tier best">
+        <span class="tag">MOST CHOSEN</span>
+        <h3>Standard</h3>
+        <div class="price">$497</div>
+        <div class="per">one role · 48 hours</div>
+        <ul>
+          <li>Up to 300 CVs</li>
+          <li>Ranked shortlist + dossiers</li>
+          <li>Reject-reason CSV</li>
+          <li>Human-review flags</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>Pilot month</h3>
+        <div class="price">$997</div>
+        <div class="per">up to 3 roles · 30 days</div>
+        <ul>
+          <li>Rolling turnaround</li>
+          <li>Everything in Standard</li>
+          <li>Rules tuned to your desk</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="close">
+  <div class="wrap">
+    <h2>Start with 20 CVs. Free.</h2>
+    <p>Pick the role that's annoying you most right now. Ranked shortlist back within
+       6 hours, and you decide from there.</p>
+    <div class="row">
+      <a class="cta" href="https://wa.me/2347045133797?text=Hi%20Sadiq%20-%20I'd%20like%20to%20try%20the%20free%2020%20CV%20screen.">WhatsApp me</a>
+      <a class="btn2" href="mailto:sadiqssolutions@gmail.com?subject=20%20CVs%20screened%20free">Email instead</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Sadiq Solutions — CV Screening for Recruitment Teams</span>
+    <span><a href="mailto:sadiqssolutions@gmail.com">sadiqssolutions@gmail.com</a>
+      · <a href="https://wa.me/2347045133797">+234 704 513 3797</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
